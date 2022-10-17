@@ -44,7 +44,7 @@ run the following commands in your terminal
 
 ## Author
 
-👤 **Author 2**
+👤 **Author 1**
 
 - GitHub: [@JonahKayizzi](https://github.com/JonahKayizzi)
 
