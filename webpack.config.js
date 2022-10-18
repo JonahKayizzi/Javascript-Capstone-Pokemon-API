@@ -19,7 +19,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: 'asset/resource',
       },
       {
@@ -36,5 +36,5 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
+  // presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
 };
