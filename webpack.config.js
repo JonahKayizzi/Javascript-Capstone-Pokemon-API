@@ -36,5 +36,5 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
- // presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
+  // presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
 };

@@ -1,5 +1,5 @@
 import './styles.css';
-import  Icon from './assets/img/pokemon.png';
+import Icon from './assets/img/pokemon.png';
 
 const logoDiv = document.getElementById('logo');
 
