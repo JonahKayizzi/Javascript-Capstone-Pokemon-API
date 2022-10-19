@@ -63,18 +63,18 @@ export default async (id) => {
       );
 
       createHTMLelement(
-        'p',
-        'pokemon-name',
+        'span',
+        'pokemon-name span-size',
         'stats-hp',
-        `HP: ${result.stats[0].base_stat}`,
+        `HP: <span class="status-text">${result.stats[0].base_stat}</span>`,
         healthStats,
       );
 
       createHTMLelement(
-        'p',
-        'pokemon-name',
+        'span',
+        'pokemon-name span-size',
         'type',
-        `Type: ${result.types[0].type.name}`,
+        `Type: <span class="status-text">${result.types[0].type.name}</span>`,
         healthStats,
       );        
 
@@ -87,18 +87,18 @@ export default async (id) => {
       );
 
       createHTMLelement(
-        'p',
-        'pokemon-name',
+        'span',
+        'pokemon-name span-size',
         'attack',
-        `Attack: ${result.stats[1].base_stat}`,
+        `Attack: <span class="status-text"> ${result.stats[1].base_stat}</span>`,
         fightStats,
       );
 
       createHTMLelement(
-        'p',
-        'pokemon-name',
+        'span',
+        'pokemon-name span-size',
         'defense',
-        `Defense: ${result.stats[2].base_stat}`,
+        `Defense: <span class="status-text"> ${result.stats[2].base_stat}</span>`,
         fightStats,
       );
 

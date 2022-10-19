@@ -171,6 +171,16 @@ footer {
   text-align: center;
 }
 
+.status-text {
+  color: #000;
+  font-size: large;
+}
+
+.span-size {
+  width: 50%;
+  align-items: center;
+}
+
 .comment-form {
   display: flex;
   flex-direction: column;
