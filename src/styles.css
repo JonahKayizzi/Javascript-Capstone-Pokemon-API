@@ -199,3 +199,37 @@ footer {
   font-size: 1.8rem;
   border: 1px solid gray;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-self: center;
+  margin-top: 20px; 
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  width: 50%;
+  border: solid black 2px;
+  height: 30px;
+  box-shadow: 2px 2px 2px 2px rgb(80, 80, 80);
+}
+
+textarea {
+  height: 150px;
+  width: 80%;
+  border: solid black 2px;
+  box-shadow: 2px 2px 2px 2px rgb(80, 80, 80);
+}
+
+.auto {
+  align-self: auto;
+}
+
+
