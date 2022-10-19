@@ -46,7 +46,7 @@ export default async (id) => {
         pokemonSummary,
       );
 
-      const p = createHTMLelement(
+     createHTMLelement(
         'p',
         'pokemon-name',
         'pokemon-name',
@@ -62,7 +62,7 @@ export default async (id) => {
         pokemonSummary,
       );
 
-      const statsHp = createHTMLelement(
+      createHTMLelement(
         'p',
         'pokemon-name',
         'stats-hp',
@@ -70,7 +70,7 @@ export default async (id) => {
         healthStats,
       );
 
-      const type = createHTMLelement(
+      createHTMLelement(
         'p',
         'pokemon-name',
         'type',
@@ -86,7 +86,7 @@ export default async (id) => {
         pokemonSummary,
       );
 
-      const attack = createHTMLelement(
+      createHTMLelement(
         'p',
         'pokemon-name',
         'attack',
@@ -94,7 +94,7 @@ export default async (id) => {
         fightStats,
       );
 
-      const defense = createHTMLelement(
+      createHTMLelement(
         'p',
         'pokemon-name',
         'defense',
@@ -110,7 +110,7 @@ export default async (id) => {
         modal,
       );
 
-      const commentTitle = createHTMLelement(
+      createHTMLelement(
         'h3',
         'comment-title',
         'comment-title',
@@ -118,7 +118,7 @@ export default async (id) => {
         commentSumary,
       );
 
-      const comment = createHTMLelement(
+      createHTMLelement(
         'p',
         'comment-text',
         'comment-text',
@@ -126,7 +126,7 @@ export default async (id) => {
         commentSumary,
       );
 
-      const formTitle = createHTMLelement(
+      createHTMLelement(
         'h3',
         'comment-title',
         'form-title',
@@ -142,7 +142,7 @@ export default async (id) => {
         commentSumary,
       );
 
-      const inputName = createHTMLelement(
+      createHTMLelement(
         'input',
         'input-name',
         'input-name',
