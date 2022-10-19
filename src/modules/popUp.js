@@ -1,4 +1,5 @@
-import createHTMLelement from "./createHTMLelement";
+import createHTMLelement from "./createHTMLelement.js";
+import Forms from "./createFormElements.js";
 
 export default async (id) => {
  
@@ -132,27 +133,52 @@ export default async (id) => {
         'form-title',
         'Add a comment',
         commentSumary,
-      );
+      );      
 
-      const commentForm = createHTMLelement(
-        'form',
-        'comment-form',
-        'comment-form',
+      const formContainer = createHTMLelement(
+        'div',
+        'form-container',
+        'form-container',
         '',
         commentSumary,
       );
 
-      createHTMLelement(
-        'input',
-        'input-name',
-        'input-name',
-        '',
-        commentForm,
+     const form = Forms.createForm(
+        'form',
+        'form',
+        'form',
+        'POST',
+        formContainer
       );
 
+      Forms.createInput(
+        'input',
+        'input',
+        'input-name',
+        'text',
+        'name',
+        'Your name',
+        form,
+      );
 
+      Forms.createTextArea(
+        'textarea',
+        'textarea',
+        'textarea',
+        'comment',
+        'Your insights',
+        form,
+      );
 
-
-    }
+      Forms.createButton(
+        'button',
+        'comments auto',
+        'button-modal',
+        'Submit',
+        'submit',
+        form,
+      );
+}
+    
      
     
