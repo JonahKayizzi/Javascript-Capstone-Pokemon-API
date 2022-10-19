@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  align-items: center;
   font-family:
     'Lucida Sans',
     'Lucida Sans Regular',
@@ -10,8 +11,21 @@ body {
     sans-serif;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 header {
   align-items: center;
+  width: 100%;
 }
 
 .logo-img {
@@ -23,15 +37,67 @@ header {
   gap: 6em;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 footer {
   border: solid 1px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
+}
+
+.pokemons-container {
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.pokemon-summary {
+  width: 30%;
+  margin: 0.8em;
+  border-radius: 16px;
+  border: solid 1px #3864a8;
+
+  /* box-shadow: 2px 2px 2px 2px #3864a8; */
+  padding: 1em 0;
+}
+
+.pokemon-image {
+  height: 150px;
+}
+
+.name-container {
+  justify-content: space-around;
+  font-size: 1.5em;
+}
+
+.likes-number {
+  text-align: right;
+  padding: 0 1em;
+}
+
+.comments {
+  width: 50%;
+  align-self: center;
+  border-radius: 8px;
+  height: 3em;
+  color: #fff;
+  background-color: #df1818;
+  border: solid 2px #000;
+  font-size: 1em;
+}
+
+.comments:hover {
+  border-color: #3864a8;
+  background: #ffcb04;
+  color: #000;
+}
+
+.pokemon-name {
+  margin: 0;
+  color: #3864a8;
+}
+
+.icons {
+  color: #df1818;
+}
+
+.icons:hover,
+.comments:hover {
+  cursor: pointer;
 }
