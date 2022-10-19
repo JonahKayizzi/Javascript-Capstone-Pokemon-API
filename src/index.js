@@ -1,6 +1,6 @@
 import './styles.css';
 import Icon from './assets/img/pokemon.png';
-import displayPokemons from './modules/displayPokemons';
+import displayPokemons from './modules/displayPokemons.js';
 
 const logoDiv = document.getElementById('logo');
 
