@@ -76,7 +76,7 @@ footer {
   height: 150px;
 }
 
-.pokemon-image-modal { 
+.pokemon-image-modal {
   height: 300px;
 }
 
@@ -130,8 +130,8 @@ footer {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -189,7 +189,6 @@ footer {
   align-self: center;
   border: solid 2px black;
   width: 40%;
-
 }
 
 .input-name {
@@ -205,7 +204,7 @@ footer {
   flex-direction: column;
   width: 40%;
   align-self: center;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .form {
@@ -231,5 +230,3 @@ textarea {
 .auto {
   align-self: auto;
 }
-
-
