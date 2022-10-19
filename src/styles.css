@@ -174,11 +174,12 @@ footer {
 .status-text {
   color: #000;
   font-size: large;
+  font-weight: bold;
 }
 
 .span-size {
   width: 50%;
-  align-items: center;
+  text-align: center;
 }
 
 .comment-form {
