@@ -2,8 +2,13 @@ body {
   margin: 0;
   padding: 0;
   align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family:
+    'Lucida Sans',
+    'Lucida Sans Regular',
+    'Lucida Grande',
+    'Lucida Sans Unicode',
+    Verdana,
+    sans-serif;
 }
 
 .flex-col {
@@ -47,7 +52,8 @@ footer {
   margin: 0.8em;
   border-radius: 16px;
   border: solid 1px #3864a8;
-  /*box-shadow: 2px 2px 2px 2px #3864a8;*/
+
+  /* box-shadow: 2px 2px 2px 2px #3864a8; */
   padding: 1em 0;
 }
 
@@ -62,6 +68,7 @@ footer {
 
 .likes-number {
   text-align: right;
+  padding: 0 1em;
 }
 
 .comments {
@@ -93,8 +100,4 @@ footer {
 .icons:hover,
 .comments:hover {
   cursor: pointer;
-}
-
-.likes-number {
-  padding: 0 1em;
 }
