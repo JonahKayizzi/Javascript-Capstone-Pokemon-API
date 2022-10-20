@@ -230,3 +230,10 @@ textarea {
 .auto {
   align-self: auto;
 }
+
+.comment-text {
+  list-style: none;
+  align-items: flex-start;  
+  padding-left: 30%;
+  gap: 10px;
+}
