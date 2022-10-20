@@ -1,5 +1,6 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
+import { getComment, addComment } from './comments.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -116,13 +117,27 @@ export default async (id) => {
     commentSumary,
   );
 
-  createHTMLelement(
-    'p',
+  const commentList = createHTMLelement(
+    'ul',
+    'comment-text flex-col',
     'comment-text',
-    'comment-text',
-    'This will be generated dynamically',
+    '',
     commentSumary,
   );
+
+  getComment(id).then((data) => {
+    data.forEach((comment) => {
+      createHTMLelement(
+        'li',
+        'comment',
+        'comment',
+        `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+        commentList,
+      );
+    });
+  });
+
+  // displayComments();
 
   createHTMLelement(
     'h3',
@@ -143,7 +158,7 @@ export default async (id) => {
   const form = Forms.createForm(
     'form',
     'form',
-    'form',
+    `${result.id}`,
     'POST',
     formContainer,
   );
@@ -161,7 +176,7 @@ export default async (id) => {
   Forms.createTextArea(
     'textarea',
     'textarea',
-    'textarea',
+    'input-comment',
     'comment',
     'Your insights',
     form,
@@ -169,10 +184,34 @@ export default async (id) => {
 
   Forms.createButton(
     'button',
-    'comments auto',
-    'button-modal',
+    'comments-modal auto',
+    `${result.id}`,
     'Submit',
     'submit',
     form,
   );
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userName = document.querySelector('#input-name').value;
+    const comment = document.querySelector('#input-comment').value;
+    const itemId = form.id;
+    addComment(itemId, userName, comment);
+    setTimeout(() => {
+      getComment(id).then((data) => {
+        commentList.innerHTML = '';
+        data.forEach((comment) => {
+          createHTMLelement(
+            'li',
+            'comment',
+            'comment',
+            `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+            commentList,
+          );
+        });
+      });
+    }, 1000);
+
+    form.reset();
+  });
 };
