@@ -90,7 +90,7 @@ footer {
   padding: 0 1em;
 }
 
-.comments {
+.comments, .comments-modal {
   width: 50%;
   align-self: center;
   border-radius: 8px;
@@ -101,7 +101,7 @@ footer {
   font-size: 1em;
 }
 
-.comments:hover {
+.comments:hover, .comments-modal:hover {
   border-color: #3864a8;
   background: #ffcb04;
   color: #000;

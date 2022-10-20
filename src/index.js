@@ -2,6 +2,7 @@ import './styles.css';
 import Icon from './assets/img/pokemon.png';
 import displayPokemons from './modules/displayPokemons.js';
 import PopUp from './modules/popUp.js';
+//import comments from './modules/comments.js';
 
 const logoDiv = document.getElementById('logo');
 const pokemonsContainer = document.querySelector('.pokemons-container');
@@ -30,3 +31,4 @@ modal.addEventListener('click', (e) => {
     modalContent.innerHTML = '';
   }
 });
+

@@ -1,5 +1,6 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
+import comments from './comments.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -116,6 +117,9 @@ export default async (id) => {
     commentSumary,
   );
 
+  const comentPosted = comments.getComment(id);
+  console.log(response);
+ 
   createHTMLelement(
     'p',
     'comment-text',
@@ -143,7 +147,7 @@ export default async (id) => {
   const form = Forms.createForm(
     'form',
     'form',
-    'form',
+    `${result.id}`,
     'POST',
     formContainer,
   );
@@ -161,7 +165,7 @@ export default async (id) => {
   Forms.createTextArea(
     'textarea',
     'textarea',
-    'textarea',
+    'input-comment',
     'comment',
     'Your insights',
     form,
@@ -169,10 +173,24 @@ export default async (id) => {
 
   Forms.createButton(
     'button',
-    'comments auto',
-    'button-modal',
+    'comments-modal auto',
+    `${result.id}`,
     'Submit',
     'submit',
     form,
-  );
+  );  
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.querySelector('#input-name').value;
+    const comment = document.querySelector('#input-comment').value;
+    const item_id = form.id
+    comments.addComment(item_id, username, comment);
+    form.reset();
+  });
+  
+
+
 };
+
+
