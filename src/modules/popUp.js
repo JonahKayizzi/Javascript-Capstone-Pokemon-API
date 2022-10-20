@@ -1,6 +1,7 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
 import { getComment, addComment } from './comments.js';
+import countItems from './countItems.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -113,7 +114,7 @@ export default async (id) => {
     'h3',
     'comment-title',
     'comment-title',
-    'Comments (counter)',
+    'Comments<span class="comment-counter"></span>',
     commentSumary,
   );
 
@@ -129,7 +130,7 @@ export default async (id) => {
     data.forEach((comment) => {
       createHTMLelement(
         'li',
-        'comment',
+        'comment comment-item',
         'comment',
         `${comment.creation_date} ${comment.username}: ${comment.comment}`,
         commentList,
@@ -198,20 +199,15 @@ export default async (id) => {
     const itemId = form.id;
     addComment(itemId, userName, comment);
     setTimeout(() => {
-      getComment(id).then((data) => {
-        commentList.innerHTML = '';
-        data.forEach((comment) => {
-          createHTMLelement(
-            'li',
-            'comment',
-            'comment',
-            `${comment.creation_date} ${comment.username}: ${comment.comment}`,
-            commentList,
-          );
-        });
-      });
+
     }, 1000);
 
     form.reset();
   });
+
+  const comentCounter = document.querySelector('.comment-counter');
+  setTimeout(() => {
+    const commentCounter = document.querySelectorAll('.comment-item');
+    comentCounter.innerHTML = `(${countItems(commentCounter)})`;
+  }, 1000);
 };
