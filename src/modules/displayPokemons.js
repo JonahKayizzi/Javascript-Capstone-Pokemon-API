@@ -5,9 +5,10 @@ import postLikes from './postLikes.js';
 export default async () => {
   const pokemonsContainer = document.querySelector('.pokemons-container');
   const response = await fetch(
-    'https://pokeapi.co/api/v2/pokemon?limit=6&offset=888',
+    'https://pokeapi.co/api/v2/pokemon?limit=6&offset=888'
   );
   const result = await response.json();
+  console.log(result);
   result.results.forEach((pokemon) => {
     const [, , , , , , pokemonId] = pokemon.url.split('/');
     const pokemonSummary = createHTMLElement(
@@ -15,7 +16,7 @@ export default async () => {
       'pokemon-summary flex-col',
       'pokemon-summary',
       '',
-      pokemonsContainer,
+      pokemonsContainer
     );
 
     const pokemonImage = createHTMLElement(
@@ -23,7 +24,7 @@ export default async () => {
       'pokemon-image',
       'pokemon-image',
       '',
-      pokemonSummary,
+      pokemonSummary
     );
     pokemonImage.style.background = `url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png") 50% 0 no-repeat`;
     pokemonImage.style.backgroundSize = 'contain';
@@ -33,7 +34,7 @@ export default async () => {
       'name-container flex-row',
       'name-container',
       '',
-      pokemonSummary,
+      pokemonSummary
     );
 
     createHTMLElement(
@@ -41,7 +42,7 @@ export default async () => {
       'pokemon-name',
       'pokemon-name',
       `${pokemon.name}`,
-      nameContainer,
+      nameContainer
     );
 
     const likeIcon = createHTMLElement(
@@ -49,7 +50,7 @@ export default async () => {
       'icons fa fa-heart-o',
       'fa fa-heart-o',
       '',
-      nameContainer,
+      nameContainer
     );
     likeIcon.ariaHidden = true;
 
@@ -58,7 +59,7 @@ export default async () => {
       'likes-number',
       'likes-number',
       '',
-      pokemonSummary,
+      pokemonSummary
     );
 
     getLikes(pokemonId).then((value) => {
@@ -70,7 +71,7 @@ export default async () => {
       'comments',
       `${pokemonId}`,
       'Comments',
-      pokemonSummary,
+      pokemonSummary
     );
 
     likeIcon.addEventListener('click', () => {
