@@ -1,4 +1,4 @@
-const comments = {
+const Comments = {
 
     async addComment(item_id, username, comment) {
       const idUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/J8kNrW25pXGkaMtl5ivW/comments';
@@ -21,6 +21,5 @@ const comments = {
         const response = await fetch(idUrl);
         return response.json();
     },
-    };
-
-    export default comments;
+};
+ export default Comments;

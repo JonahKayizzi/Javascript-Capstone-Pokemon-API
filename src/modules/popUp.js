@@ -1,6 +1,6 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
-import comments from './comments.js';
+import Comments from './comments.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -116,18 +116,27 @@ export default async (id) => {
     'Comments (counter)',
     commentSumary,
   );
-
-  const comentPosted = comments.getComment(id);
-  console.log(response);
- 
-  createHTMLelement(
-    'p',
+  
+  const commentList = createHTMLelement(
+    'ul',
     'comment-text',
     'comment-text',
-    'This will be generated dynamically',
+    '',
     commentSumary,
   );
 
+  Comments.getComment(id).then((data) => {
+  data.forEach((comment) => {
+    createHTMLelement(
+      'li',
+      'comment',
+      'comment',
+      `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+      commentList,
+    );
+  });
+ });
+    
   createHTMLelement(
     'h3',
     'comment-title',
@@ -185,8 +194,9 @@ export default async (id) => {
     const username = document.querySelector('#input-name').value;
     const comment = document.querySelector('#input-comment').value;
     const item_id = form.id
-    comments.addComment(item_id, username, comment);
+    Comments.addComment(item_id, username, comment);
     form.reset();
+    
   });
   
 
