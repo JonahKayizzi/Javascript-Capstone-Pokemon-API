@@ -1,8 +1,7 @@
-const Comments = {
-
-    async addComment(item_id, username, comment) {
+    const addComment = async(item_id, username, comment) => {
       const idUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/J8kNrW25pXGkaMtl5ivW/comments';
-      const response = await fetch(idUrl, {
+  
+        await fetch(idUrl, {
         method: 'POST',
         body: JSON.stringify({
             item_id,
@@ -13,13 +12,14 @@ const Comments = {
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
-      return response.json();
-    },
+     // return response.json();
+    };
 
-    async getComment(id) {
+    const getComment = async(id) => {
         const idUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/J8kNrW25pXGkaMtl5ivW/comments?item_id=${id}`;
         const response = await fetch(idUrl);
-        return response.json();
-    },
-};
- export default Comments;
+        const data = await response.json();
+        return data;        
+    };
+
+ export { getComment, addComment };
