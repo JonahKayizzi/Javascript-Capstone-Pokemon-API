@@ -90,7 +90,8 @@ footer {
   padding: 0 1em;
 }
 
-.comments, .comments-modal {
+.comments,
+.comments-modal {
   width: 50%;
   align-self: center;
   border-radius: 8px;
@@ -101,7 +102,8 @@ footer {
   font-size: 1em;
 }
 
-.comments:hover, .comments-modal:hover {
+.comments:hover,
+.comments-modal:hover {
   border-color: #3864a8;
   background: #ffcb04;
   color: #000;
@@ -167,10 +169,6 @@ footer {
   text-align: center;
 }
 
-.comment-text {
-  text-align: center;
-}
-
 .status-text {
   color: #000;
   font-size: large;
@@ -233,7 +231,8 @@ textarea {
 
 .comment-text {
   list-style: none;
-  align-items: flex-start;  
+  align-items: flex-start;
   padding-left: 30%;
   gap: 10px;
+  text-align: center;
 }

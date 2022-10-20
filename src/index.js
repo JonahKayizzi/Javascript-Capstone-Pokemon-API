@@ -30,4 +30,3 @@ modal.addEventListener('click', (e) => {
     modalContent.innerHTML = '';
   }
 });
-

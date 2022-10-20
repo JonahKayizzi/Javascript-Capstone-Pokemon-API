@@ -1,6 +1,6 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
-import {getComment, addComment} from './comments.js';
+import { getComment, addComment } from './comments.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -116,30 +116,29 @@ export default async (id) => {
     'Comments (counter)',
     commentSumary,
   );
-  
+
   const commentList = createHTMLelement(
     'ul',
     'comment-text flex-col',
     'comment-text',
     '',
     commentSumary,
-  );  
+  );
 
-  getComment(id).then((data) => {  
-  data.forEach((comment) => {    
-    createHTMLelement(
-      'li',
-      'comment',
-      'comment',
-      `${comment.creation_date} ${comment.username}: ${comment.comment}`,
-      commentList,
-    );
+  getComment(id).then((data) => {
+    data.forEach((comment) => {
+      createHTMLelement(
+        'li',
+        'comment',
+        'comment',
+        `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+        commentList,
+      );
+    });
   });
- });
 
+  // displayComments();
 
-  //displayComments();
-    
   createHTMLelement(
     'h3',
     'comment-title',
@@ -190,18 +189,18 @@ export default async (id) => {
     'Submit',
     'submit',
     form,
-  );  
-  
+  );
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const username = document.querySelector('#input-name').value;
+    const userName = document.querySelector('#input-name').value;
     const comment = document.querySelector('#input-comment').value;
-    const item_id = form.id   
-    addComment(item_id, username, comment);
+    const itemId = form.id;
+    addComment(itemId, userName, comment);
     setTimeout(() => {
       getComment(id).then((data) => {
-        commentList.innerHTML = '';  
-        data.forEach((comment) => {    
+        commentList.innerHTML = '';
+        data.forEach((comment) => {
           createHTMLelement(
             'li',
             'comment',
@@ -210,16 +209,9 @@ export default async (id) => {
             commentList,
           );
         });
-       });
+      });
     }, 1000);
-    
-    
-  
-        
-       
-    form.reset(); 
 
-  
+    form.reset();
   });
 };
-
