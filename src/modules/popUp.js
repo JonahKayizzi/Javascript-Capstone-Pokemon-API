@@ -1,6 +1,6 @@
 import createHTMLelement from './createHTMLelement.js';
 import Forms from './createFormElements.js';
-import Comments from './comments.js';
+import {getComment, addComment} from './comments.js';
 
 export default async (id) => {
   const response = await fetch(
@@ -119,14 +119,14 @@ export default async (id) => {
   
   const commentList = createHTMLelement(
     'ul',
-    'comment-text',
+    'comment-text flex-col',
     'comment-text',
     '',
     commentSumary,
-  );
+  );  
 
-  Comments.getComment(id).then((data) => {
-  data.forEach((comment) => {
+  getComment(id).then((data) => {  
+  data.forEach((comment) => {    
     createHTMLelement(
       'li',
       'comment',
@@ -136,6 +136,9 @@ export default async (id) => {
     );
   });
  });
+
+
+  //displayComments();
     
   createHTMLelement(
     'h3',
@@ -193,14 +196,30 @@ export default async (id) => {
     e.preventDefault();
     const username = document.querySelector('#input-name').value;
     const comment = document.querySelector('#input-comment').value;
-    const item_id = form.id
-    Comments.addComment(item_id, username, comment);
-    form.reset();
+    const item_id = form.id   
+    addComment(item_id, username, comment);
+    setTimeout(() => {
+      getComment(id).then((data) => {
+        commentList.innerHTML = '';  
+        data.forEach((comment) => {    
+          createHTMLelement(
+            'li',
+            'comment',
+            'comment',
+            `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+            commentList,
+          );
+        });
+       });
+    }, 1000);
     
-  });
+    
   
+        
+       
+    form.reset(); 
 
-
+  
+  });
 };
-
 
