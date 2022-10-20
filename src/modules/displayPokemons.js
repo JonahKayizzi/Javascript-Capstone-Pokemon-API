@@ -1,4 +1,5 @@
 import createHTMLElement from './createHTMLelement.js';
+import getLikes from './getLikes.js';
 
 export default async () => {
   const pokemonsContainer = document.querySelector('.pokemons-container');
@@ -52,13 +53,17 @@ export default async () => {
     );
     likeIcon.ariaHidden = true;
 
-    createHTMLElement(
+    const likeEle = createHTMLElement(
       'p',
       'likes-number',
       'likes-number',
-      '5 likes',
+      '',
       pokemonSummary,
     );
+
+    getLikes(pokemonId).then((value) => {
+      likeEle.innerHTML = `${value.likes || 0} likes`;
+    });
 
     createHTMLElement(
       'button',
