@@ -1,5 +1,6 @@
 import createHTMLElement from './createHTMLelement.js';
 import getLikes from './getLikes.js';
+import postLikes from './postLikes.js';
 
 export default async () => {
   const pokemonsContainer = document.querySelector('.pokemons-container');
@@ -73,8 +74,14 @@ export default async () => {
       pokemonSummary,
     );
 
-    likeIcon.addEventListener('mouseover', () => {
+    likeIcon.addEventListener('click', () => {
       likeIcon.classList = 'icons fa fa-heart';
+      postLikes(pokemonId);
+      setTimeout(() => {
+        getLikes(pokemonId).then((value) => {
+          likeEle.innerHTML = `${value.likes || 0} likes`;
+        });
+      }, 1000);
     });
   });
 };
