@@ -7,7 +7,7 @@ export default () => {
     'container',
     'container',
     '',
-    xx
+    xx,
   );
 
   return containerSection;

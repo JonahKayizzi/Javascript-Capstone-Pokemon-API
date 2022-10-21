@@ -3,8 +3,13 @@ body {
   padding: 0;
   background-color: #3864a8;
   align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family:
+    'Lucida Sans',
+    'Lucida Sans Regular',
+    'Lucida Grande',
+    'Lucida Sans Unicode',
+    Verdana,
+    sans-serif;
 }
 
 .flex-col {
