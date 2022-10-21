@@ -3,8 +3,13 @@ body {
   padding: 0;
   background-color: #3864a8;
   align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family:
+    'Lucida Sans',
+    'Lucida Sans Regular',
+    'Lucida Grande',
+    'Lucida Sans Unicode',
+    Verdana,
+    sans-serif;
 }
 
 .flex-col {
@@ -71,7 +76,7 @@ footer a {
 
 .pokemon-summary-modal {
   width: 70%;
-  margin: 0px 15%;
+  margin: 0 15%;
   border-radius: 16px;
   border: solid 1px #3864a8;
   box-shadow: 2px 2px 2px 2px #3864a8;

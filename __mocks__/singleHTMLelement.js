@@ -7,7 +7,7 @@ export default () => {
     'container',
     'container',
     '',
-    xx
+    xx,
   );
   createHTMLelement('li', 'item', 'item', '', containerList);
   return containerList;
