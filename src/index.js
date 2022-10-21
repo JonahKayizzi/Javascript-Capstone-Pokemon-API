@@ -17,10 +17,8 @@ logoDiv.appendChild(myIcon);
 
 window.onload = () => {
   displayPokemons();
-
   setTimeout(() => {
-    const pokemonItems = document.querySelectorAll('.pokemon-summary');
-    pokemonCounter.innerHTML = `(${countItems(pokemonItems)})`;
+    pokemonCounter.innerHTML = `(${countItems(pokemonsContainer)})`;
   }, 2000);
 };
 

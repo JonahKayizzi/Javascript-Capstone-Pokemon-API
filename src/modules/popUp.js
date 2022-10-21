@@ -4,20 +4,12 @@ import { getComment, addComment } from './comments.js';
 import countItems from './countItems.js';
 
 export default async (id) => {
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${id}`,
-  );
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
   const result = await response.json();
   const modal = document.querySelector('.modal-content');
 
-  createHTMLelement(
-    'span',
-    'close',
-    'close',
-    '&times;',
-    modal,
-  );
+  createHTMLelement('span', 'close', 'close', '&times;', modal);
 
   const pokemonSummary = createHTMLelement(
     'div',
@@ -126,19 +118,28 @@ export default async (id) => {
     commentSumary,
   );
 
-  getComment(id).then((data) => {
-    data.forEach((comment) => {
-      createHTMLelement(
-        'li',
-        'comment comment-item',
-        'comment',
-        `${comment.creation_date} ${comment.username}: ${comment.comment}`,
-        commentList,
-      );
+  const displayComments = () => {
+    getComment(id).then((data) => {
+      commentList.innerHTML = '';
+      data.forEach((comment) => {
+        createHTMLelement(
+          'li',
+          'comment comment-item',
+          'comment',
+          `${comment.creation_date} ${comment.username}: ${comment.comment}`,
+          commentList,
+        );
+      });
     });
-  });
 
-  // displayComments();
+    const comentCounter = document.querySelector('.comment-counter');
+    setTimeout(() => {
+      const commentCounter = document.querySelector('.comment-text');
+      comentCounter.innerHTML = `(${countItems(commentCounter)})`;
+    }, 1000);
+  };
+
+  displayComments();
 
   createHTMLelement(
     'h3',
@@ -199,15 +200,9 @@ export default async (id) => {
     const itemId = form.id;
     addComment(itemId, userName, comment);
     setTimeout(() => {
-
+      displayComments();
     }, 1000);
 
     form.reset();
   });
-
-  const comentCounter = document.querySelector('.comment-counter');
-  setTimeout(() => {
-    const commentCounter = document.querySelectorAll('.comment-item');
-    comentCounter.innerHTML = `(${countItems(commentCounter)})`;
-  }, 1000);
 };
