@@ -1,0 +1,52 @@
+{
+  "name": "javascript-capstone-pokemon-api",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonahKayizzi/Javascript-Capstone-Pokemon-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonahKayizzi/Javascript-Capstone-Pokemon-API/issues"
+  },
+  "homepage": "https://github.com/JonahKayizzi/Javascript-Capstone-Pokemon-API#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.2.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "hint": "^7.1.3",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.2.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.2.1",
+    "jsdom": "^20.0.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
