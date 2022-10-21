@@ -1,14 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #3864a8;
   align-items: center;
-  font-family:
-    'Lucida Sans',
-    'Lucida Sans Regular',
-    'Lucida Grande',
-    'Lucida Sans Unicode',
-    Verdana,
-    sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Verdana, sans-serif;
 }
 
 .flex-col {
@@ -32,6 +28,8 @@ body {
 header {
   align-items: center;
   width: 100%;
+  color: #fff;
+  margin: 1em 0;
 }
 
 .logo-img {
@@ -46,26 +44,34 @@ header {
 footer {
   border: solid 1px;
   width: 100%;
+  margin: 1em 0 0;
+  padding: 1em 0;
+  color: #fff;
+}
+
+footer a {
+  color: #ffcb04;
 }
 
 .pokemons-container {
   flex-wrap: wrap;
   width: 80%;
+  gap: 2em;
 }
 
 .pokemon-summary {
-  width: 30%;
+  width: 25%;
   margin: 0.8em;
   border-radius: 16px;
   border: solid 1px #3864a8;
-
-  /* box-shadow: 2px 2px 2px 2px #3864a8; */
+  box-shadow: 0 0 7px 7px rgba(255, 203, 4, 0.7);
   padding: 1em 0;
+  background-color: #fff;
 }
 
 .pokemon-summary-modal {
-  width: 40%;
-  margin: 0 30%;
+  width: 70%;
+  margin: 0px 15%;
   border-radius: 16px;
   border: solid 1px #3864a8;
   box-shadow: 2px 2px 2px 2px #3864a8;
@@ -94,24 +100,25 @@ footer {
 .comments-modal {
   width: 50%;
   align-self: center;
-  border-radius: 8px;
+  border-radius: 10px;
   height: 3em;
   color: #fff;
-  background-color: #df1818;
+  background: linear-gradient(90deg, #ff1c1c, #a40808);
   border: solid 2px #000;
   font-size: 1em;
 }
 
 .comments:hover,
 .comments-modal:hover {
-  border-color: #3864a8;
   background: #ffcb04;
   color: #000;
+  border: solid 4px #3864a8;
 }
 
 .pokemon-name {
   margin: 0;
   color: #3864a8;
+  font-size: 0.8em;
 }
 
 .icons {
@@ -140,9 +147,11 @@ footer {
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 3em;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 16px;
+  box-shadow: 0 0 4em 4em rgba(255, 203, 4, 0.2);
 }
 
 /* The Close Button */
@@ -216,6 +225,7 @@ footer {
   border: solid black 2px;
   height: 30px;
   box-shadow: 2px 2px 2px 2px rgb(80, 80, 80);
+  border-radius: 4px;
 }
 
 textarea {
@@ -223,6 +233,8 @@ textarea {
   width: 80%;
   border: solid black 2px;
   box-shadow: 2px 2px 2px 2px rgb(80, 80, 80);
+  border-radius: 8px;
+  padding: 0.8em;
 }
 
 .auto {
