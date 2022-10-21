@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import createHTMLelement from '../src/modules/createHTMLelement.js';
 
 const xx = document.body;
@@ -13,6 +10,5 @@ export default () => {
     xx
   );
   createHTMLelement('li', 'item', 'item', '', containerList);
-  console.log(containerList);
   return containerList;
 };
