@@ -1,15 +1,14 @@
 import createHTMLelement from '../src/modules/createHTMLelement.js';
 
+const xx = document.body;
 export default () => {
   const containerSection = createHTMLelement(
     'section',
     'container',
     'container',
     '',
-    ''
+    xx
   );
-
-  console.log(containerSection);
 
   return containerSection;
 };
