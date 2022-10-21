@@ -4,4 +4,9 @@
         "plugins": ["@babel/plugin-transform-modules-commonjs"]
       }
     }
+<<<<<<< HEAD
   }
+=======
+  }
+  
+>>>>>>> 491f8b9 (Add test cases)

@@ -1,36 +1,27 @@
+import noHTMLelement from '../../__mocks__/noHTMLelement.js';
+import singleHTMLelement from '../../__mocks__/singleHTMLelement.js';
 import countItems from './countItems.js';
 
-const LocalStorage = new Localstorage();
-
-const myTaskList = new TaskList();
-
-myTaskList.tasks = LocalStorage.getItem();
-
-describe('Updated task description', () => {
-  test('Task description should change to new description', () => {
-    const newTaskDesc = 'Task for yesterday';
-    myTaskList.updateTask(newTaskDesc, 1);
-    LocalStorage.setItem(myTaskList.tasks);
-    expect(myTaskList.tasks[0].description).toEqual(newTaskDesc);
+describe('Count number of HTML elements', () => {
+  /*
+    test('When there are no elements', () => {
+    console.log(noHTMLelement);
+    const count = countItems(noHTMLelement);
+    expect(count).toEqual(0);
   });
-});
-
-describe('Updated task completion status', () => {
-  test('Completed status should change from previous state', () => {
-    const prevSta = myTaskList.tasks[1].completed;
-    myTaskList.completionStatus(2);
-    LocalStorage.setItem(myTaskList.tasks);
-    const currSta = myTaskList.tasks[1].completed;
-    expect(currSta).not.toEqual(prevSta);
+*/
+  test('When it is one item', () => {
+    const xxx = singleHTMLelement;
+    const count = countItems(xxx);
+    expect(count).toEqual(1);
   });
-});
 
-describe('Clear completed tasks', () => {
+  /*
   test('No task should exist with completed status true', () => {
     myTaskList.clearCompleted();
-    LocalStorage.setItem(myTaskList.tasks);
     myTaskList.tasks.forEach((task) => {
       expect(task.completed).toBeFalsy();
     });
-  });
+
+    */
 });
