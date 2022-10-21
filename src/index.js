@@ -3,6 +3,7 @@ import Icon from './assets/img/pokemon.png';
 import displayPokemons from './modules/displayPokemons.js';
 import PopUp from './modules/popUp.js';
 import countItems from './modules/countItems.js';
+import singleHTMLelement from '../__mocks__/singleHTMLelement.js';
 
 const logoDiv = document.getElementById('logo');
 const pokemonsContainer = document.querySelector('.pokemons-container');
@@ -20,6 +21,8 @@ window.onload = () => {
   setTimeout(() => {
     pokemonCounter.innerHTML = `(${countItems(pokemonsContainer)})`;
   }, 2000);
+
+  console.log(singleHTMLelement());
 };
 
 pokemonsContainer.addEventListener('click', (e) => {

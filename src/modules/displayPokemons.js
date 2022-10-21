@@ -8,7 +8,6 @@ export default async () => {
     'https://pokeapi.co/api/v2/pokemon?limit=6&offset=888'
   );
   const result = await response.json();
-  console.log(result);
   result.results.forEach((pokemon) => {
     const [, , , , , , pokemonId] = pokemon.url.split('/');
     const pokemonSummary = createHTMLElement(
