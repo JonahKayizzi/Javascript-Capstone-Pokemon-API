@@ -43,6 +43,10 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "jest-environment-jsdom": "^29.2.1"
+    "jest-environment-jsdom": "^29.2.1",
+    "jsdom": "^20.0.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
