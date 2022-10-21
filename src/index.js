@@ -3,6 +3,7 @@ import Icon from './assets/img/pokemon.png';
 import displayPokemons from './modules/displayPokemons.js';
 import PopUp from './modules/popUp.js';
 import countItems from './modules/countItems.js';
+import singleHTMLelement from '../__mocks__/singleHTMLelement.js';
 
 const logoDiv = document.getElementById('logo');
 const pokemonsContainer = document.querySelector('.pokemons-container');
@@ -17,11 +18,11 @@ logoDiv.appendChild(myIcon);
 
 window.onload = () => {
   displayPokemons();
-
   setTimeout(() => {
-    const pokemonItems = document.querySelectorAll('.pokemon-summary');
-    pokemonCounter.innerHTML = `(${countItems(pokemonItems)})`;
+    pokemonCounter.innerHTML = `(${countItems(pokemonsContainer)})`;
   }, 2000);
+
+  console.log(singleHTMLelement());
 };
 
 pokemonsContainer.addEventListener('click', (e) => {
