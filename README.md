@@ -22,7 +22,7 @@ The Pokemon API-based webapp displays some characteristics of different Pokemons
 
 ## Live Demo
 
-[Live Demo Link](https://jonahkayizzi.github.io/Javascript-Capstone-Pokemon-API/)
+[Live Demo Link](https://jonahkayizzi.github.io/Javascript-Capstone-Pokemon-API/dist/)
 
 ## Getting Started
 
